@@ -1,0 +1,26 @@
+cc_library_static {
+    name: "libinit_msm8916",
+    recovery_available: true,
+    cpp_std: "c++17",
+
+    include_dirs: [
+        "system/core/base/include",
+        "system/core/init",
+        "external/selinux/libselinux/include",
+    ],
+    cflags: ["-Wall"],
+    // ANDROIDMK TRANSLATION ERROR: unsupported assignment to LOCAL_CPP_STD
+    // LOCAL_CPP_STD := c++17
+
+    srcs: ["init_msm8916.cpp"], // ANDROIDMK TRANSLATION ERROR: unsupported conditional
+    // ifneq ($(TARGET_LIBINIT_MSM8916_DEFINES_FILE),)
+
+    // ANDROIDMK TRANSLATION ERROR: endif from unsupported conditional
+    // endif
+
+    static_libs: [
+        "libbase",
+        "libselinux",
+    ],
+
+}
